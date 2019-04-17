@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    volumes:
+      - aakarshvol:/data/db
+    networks:
+      - aakarshnet
+   mongo_express:
+     image: mongo-express
+     volumes:
+       - aakarshvol:/data/ui
+     networks:
+       - aakarshnet
+ 
+volumes:
+  aakarshvol:
+    external: true
+networks:
+  aakarshnet:
+    external: true  
